@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="JwtStore.Core.Contexts.AccountContext.Extensions" />
+    <Using Include="JwtStore.Core.Contexts.SharedContext.Entities" />
+    <Using Include="JwtStore.Core.Contexts.SharedContext.ValueObjects" />
+    
+    <Using Include="System.Security.Cryptography" />
+    <Using Include="System.Text" />
+    <Using Include="System.Text.RegularExpressions" />
+  </ItemGroup>
+
+</Project>

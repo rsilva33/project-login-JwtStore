@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1FB0D4AF-AD87-4BEC-9E8E-3B9B07748FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtStore.Core", "src\JwtStore.Core\JwtStore.Core.csproj", "{873A1F04-D896-40B0-9E10-A37BDBB60309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtStore.Infra", "src\JwtStore.Infra\JwtStore.Infra.csproj", "{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtStore.Api", "src\JwtStore.Api\JwtStore.Api.csproj", "{7F0AE031-A543-489F-AF00-71E289A16CD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{873A1F04-D896-40B0-9E10-A37BDBB60309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873A1F04-D896-40B0-9E10-A37BDBB60309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873A1F04-D896-40B0-9E10-A37BDBB60309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873A1F04-D896-40B0-9E10-A37BDBB60309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0AE031-A543-489F-AF00-71E289A16CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0AE031-A543-489F-AF00-71E289A16CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0AE031-A543-489F-AF00-71E289A16CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0AE031-A543-489F-AF00-71E289A16CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{873A1F04-D896-40B0-9E10-A37BDBB60309} = {1FB0D4AF-AD87-4BEC-9E8E-3B9B07748FC7}
+		{CF8378BA-CF04-44BF-83EA-BC8BE1E67A91} = {1FB0D4AF-AD87-4BEC-9E8E-3B9B07748FC7}
+		{7F0AE031-A543-489F-AF00-71E289A16CD1} = {1FB0D4AF-AD87-4BEC-9E8E-3B9B07748FC7}
+	EndGlobalSection
+EndGlobal

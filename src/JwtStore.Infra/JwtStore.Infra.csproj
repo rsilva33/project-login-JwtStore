@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JwtStore.Core\JwtStore.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="JwtStore.Core.Contexts.AccountContext.Entities" />
+    <Using Include="JwtStore.Infra.Contexts.AccountContext.Mappings" />
+    
+    <Using Include="Microsoft.EntityFrameworkCore" />
+    <Using Include="Microsoft.EntityFrameworkCore.Metadata.Builders" />
+  </ItemGroup>
+
+</Project>
