@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JwtStore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230920163930_v1")]
+    [Migration("20230925121855_v1")]
     partial class v1
     {
         /// <inheritdoc />

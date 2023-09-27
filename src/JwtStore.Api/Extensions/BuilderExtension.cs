@@ -24,18 +24,10 @@ public static class BuilderExtension
 
   public static void AddDataBase(this WebApplicationBuilder builder)
   {
-
-    var server = builder.Configuration["DbServer"] ?? "localhost";
-    var port = builder.Configuration["DbPort"] ?? "1450";
-    var user = builder.Configuration["DbUser"] ?? "SA";
-    var password = builder.Configuration["Password"] ?? "1q2w3e4r@#$";
-    var database = builder.Configuration["Database"] ?? "jwt-store";
-
-    var connectionString = $"Server={server}, {port};Initial Catalog={database};User ID={user};Password ={password}";
  
     builder.Services.AddDbContext<AppDbContext>(x =>
       x.UseSqlServer(
-        connectionString,
+        Configuration.Database.ConnectionString,
         b => b.MigrationsAssembly("JwtStore.Api")));
   }
 

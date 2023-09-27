@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="SendGrid" Version="9.28.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,11 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+	<Using Include="JwtStore.Core"/>
     <Using Include="JwtStore.Core.Contexts.AccountContext.Entities" />
+	<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts" />
     <Using Include="JwtStore.Infra.Contexts.AccountContext.Mappings" />
     
     <Using Include="Microsoft.EntityFrameworkCore" />
     <Using Include="Microsoft.EntityFrameworkCore.Metadata.Builders" />
+	<Using Include="SendGrid"/>
+	<Using Include="SendGrid.Helpers.Mail"/>
   </ItemGroup>
 
 </Project>
