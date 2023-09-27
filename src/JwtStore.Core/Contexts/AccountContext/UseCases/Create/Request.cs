@@ -5,4 +5,4 @@ public record Request
     string Name,
     string Email,
     string Password
-);
+) : IRequest<Response>;

@@ -7,6 +7,7 @@ builder.AddDataBase();
 builder.AddJwtAuthentication();
 
 builder.AddAccountContext();
+builder.AddMediator();
 
 var app = builder.Build();
 

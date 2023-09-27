@@ -9,10 +9,10 @@ namespace JwtStore.API.Extensions;
 
 public static class BuilderExtension
 {
-  public static void AddConfiguration(this WebApplicationBuilder builder)
-  {
-    Configuration.Database.ConnectionString =
-            builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
+    public static void AddConfiguration(this WebApplicationBuilder builder)
+    {
+        Configuration.Database.ConnectionString =
+                builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
         Configuration.Secrets.ApiKey =
             builder.Configuration.GetSection("Secrets").GetValue<string>("ApiKey") ?? string.Empty;
@@ -20,32 +20,39 @@ public static class BuilderExtension
             builder.Configuration.GetSection("Secrets").GetValue<string>("JwtPrivateKey") ?? string.Empty;
         Configuration.Secrets.PasswordSaltKey =
             builder.Configuration.GetSection("Secrets").GetValue<string>("PasswordSaltKey") ?? string.Empty;
-  }
+    }
 
-  public static void AddDataBase(this WebApplicationBuilder builder)
-  {
- 
-    builder.Services.AddDbContext<AppDbContext>(x =>
-      x.UseSqlServer(
-        Configuration.Database.ConnectionString,
-        b => b.MigrationsAssembly("JwtStore.Api")));
-  }
+    public static void AddDataBase(this WebApplicationBuilder builder)
+    {
 
-  public static void AddJwtAuthentication(this WebApplicationBuilder builder)
-  {
-      builder.Services.AddAuthentication(x => 
+        builder.Services.AddDbContext<AppDbContext>(x =>
+          x.UseSqlServer(
+            Configuration.Database.ConnectionString,
+            b => b.MigrationsAssembly("JwtStore.Api")));
+    }
+
+    public static void AddJwtAuthentication(this WebApplicationBuilder builder)
     {
-      x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-      x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(x => 
-    {
-      x.TokenValidationParameters = new TokenValidationParameters
+        builder.Services.AddAuthentication(x =>
       {
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Secrets.JwtPrivateKey)),
-        ValidateIssuer = false,
-        ValidateAudience = false
-      };
-    });
-  }
+          x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+          x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+      })
+      .AddJwtBearer(x =>
+      {
+          x.TokenValidationParameters = new TokenValidationParameters
+          {
+              IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Secrets.JwtPrivateKey)),
+              ValidateIssuer = false,
+              ValidateAudience = false
+          };
+      });
+    }
+
+    public static void AddMediator(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddMediatR(x =>
+            //NECESSARIO INFORMAR PARA O MEDIATOR AONDE ESTAO OS HANDLERS
+            x.RegisterServicesFromAssembly(typeof(Configuration).Assembly));
+    }
 }

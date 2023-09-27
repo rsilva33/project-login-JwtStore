@@ -1,10 +1,6 @@
-﻿using JwtStore.Core.Contexts.AccountContext.Entities;
-using System.Linq.Expressions;
+﻿namespace JwtStore.Core.Contexts.AccountContext.UseCases.Create;
 
-namespace JwtStore.Core.Contexts.AccountContext.UseCases.Create;
-
-//Manipulador
-public class Handler
+public class Handler : IRequestHandler<Request, Response>
 {
     private readonly IRepository _repository;
     private readonly IService _service;
