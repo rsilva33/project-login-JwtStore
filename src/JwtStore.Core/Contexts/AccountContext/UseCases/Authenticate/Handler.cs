@@ -58,7 +58,7 @@ public class Handler : IRequestHandler<Request, Response>
 
         #endregion
 
-        #region [05 - Retorna os dados]
+        #region [06 - Retorna os dados]
         try
         {
             var data = new ResponseData
@@ -66,7 +66,7 @@ public class Handler : IRequestHandler<Request, Response>
                 Id = user.Id.ToString(),
                 Name = user.Name,
                 Email = user.Email,
-                Roles = Array.Empty<string>(),
+                Roles = user.Roles.Select(x => x.Name).ToArray()
             };
 
             return new Response(string.Empty, data);

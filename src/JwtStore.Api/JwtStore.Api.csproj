@@ -13,6 +13,7 @@
 	<Using Include="JwtStore.Core"/>
 	<Using Include="JwtStore.Infra.Data" />
 
+	<Using Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
 	<Using Include="Microsoft.EntityFrameworkCore" />
 	<Using Include="Microsoft.IdentityModel.Tokens"/>
 	<Using Include="System.IdentityModel.Tokens.Jwt;"/>

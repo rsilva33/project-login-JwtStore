@@ -1,10 +1,3 @@
-using System.Text;
-using JwtStore.Core;
-using JwtStore.Infra.Data;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-
 namespace JwtStore.API.Extensions;
 
 public static class BuilderExtension
@@ -55,7 +48,7 @@ public static class BuilderExtension
               ValidateAudience = false
           };
       });
-      builder.Services.AddAuthorization();
+        builder.Services.AddAuthorization();
     }
 
     public static void AddMediator(this WebApplicationBuilder builder)

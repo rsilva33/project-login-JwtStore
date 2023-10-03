@@ -3,5 +3,5 @@
 public class Role : Entity
 {
     public string Name { get; set; } = string.Empty;
-    public IEnumerable<User> Users { get; set; } = Enumerable.Empty<User>();
+    public List<User> Users { get; set; } = new();
 }
