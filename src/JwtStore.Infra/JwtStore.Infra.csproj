@@ -16,15 +16,17 @@
   </ItemGroup>
 
   <ItemGroup>
-	<Using Include="JwtStore.Core"/>
+	<Using Include="JwtStore.Core" />
     <Using Include="JwtStore.Core.Contexts.AccountContext.Entities" />
+	<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate.Contracts"/>
 	<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts" />
     <Using Include="JwtStore.Infra.Contexts.AccountContext.Mappings" />
+	<Using Include="JwtStore.Infra.Data"/>
     
     <Using Include="Microsoft.EntityFrameworkCore" />
     <Using Include="Microsoft.EntityFrameworkCore.Metadata.Builders" />
-	<Using Include="SendGrid"/>
-	<Using Include="SendGrid.Helpers.Mail"/>
+	<Using Include="SendGrid" />
+	<Using Include="SendGrid.Helpers.Mail" />
   </ItemGroup>
 
 </Project>

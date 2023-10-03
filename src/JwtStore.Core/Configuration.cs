@@ -4,8 +4,8 @@ namespace JwtStore.Core;
 public static class Configuration
 {
     public static DatabaseConfiguration Database { get; set; } = new();
-    public static SecretsConfiguration Secrets { get; set; } = new();
     public static EmailConfiguration Email { get; set; } = new();
+    public static SecretsConfiguration Secrets { get; set; } = new();
     public static SendGridConfiguration SendGrid { get; set; } = new();
 
     public class DatabaseConfiguration

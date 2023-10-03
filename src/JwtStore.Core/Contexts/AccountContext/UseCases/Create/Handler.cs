@@ -2,10 +2,10 @@
 
 public class Handler : IRequestHandler<Request, Response>
 {
-    private readonly IRepository _repository;
+    private readonly Contracts.IRepository _repository;
     private readonly IService _service;
 
-    public Handler(IRepository repository, IService service)
+    public Handler(Contracts.IRepository repository, IService service)
     {
         _repository = repository;
         _service = service;
@@ -18,7 +18,7 @@ public class Handler : IRequestHandler<Request, Response>
         {
             var response = Specification.Ensure(request);
 
-            if (response.IsValid)
+            if (!response.IsValid)
                 return new Response("Invalid request", 400, response.Notifications);
         }
         catch

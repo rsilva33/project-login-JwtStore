@@ -22,6 +22,7 @@ public class User : Entity
     public string Name { get; private set; } = string.Empty;
     public Email Email { get; private set; } = null!;
     public Password Password { get; private set; } = null!;
+    public IEnumerable<Role> Roles { get; set; } = Enumerable.Empty<Role>();
     public string Image { get; private set; } = string.Empty;
 
     public void UpdatePassword(string plainTextPassword, string code)

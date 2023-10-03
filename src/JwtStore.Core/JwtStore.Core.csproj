@@ -7,6 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate.Contracts"/>
 		<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts" />
 		<Using Include="JwtStore.Core.Contexts.AccountContext.Entities" />
 		<Using Include="JwtStore.Core.Contexts.AccountContext.Extensions" />
@@ -16,7 +17,7 @@
 
 		<Using Include="Flunt.Notifications" />
 		<Using Include="Flunt.Validations" />
-		<Using Include="MediatR"/>
+		<Using Include="MediatR" />
 		<Using Include="System.Security.Cryptography" />
 		<Using Include="System.Text" />
 		<Using Include="System.Text.RegularExpressions" />

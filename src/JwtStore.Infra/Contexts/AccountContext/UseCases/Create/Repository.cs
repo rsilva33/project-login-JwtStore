@@ -1,4 +1,4 @@
-﻿using JwtStore.Infra.Data;
+﻿using IRepository = JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts.IRepository;
 
 namespace JwtStore.Infra.Contexts.AccountContext.UseCases.Create;
 
@@ -12,7 +12,7 @@ public class Repository : IRepository
     public async Task<bool> AnyAsync(string email, CancellationToken cancellationToken)
         => await _context.Users
         .AsNoTracking()
-        .AnyAsync(x => x.Email == email, cancellationToken: cancellationToken);
+        .AnyAsync(x => x.Email.Address == email, cancellationToken: cancellationToken);
 
     public async Task SaveAsync(User user, CancellationToken cancellationToken)
     {

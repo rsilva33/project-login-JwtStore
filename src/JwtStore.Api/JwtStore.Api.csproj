@@ -1,16 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>87f63dc0-939f-4449-8de0-b0e09609231a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <Using Include="JwtStore.API.Extensions" />  
-    <Using Include="JwtStore.Infra.Data" />
+    <Using Include="JwtStore.API.Extensions" />
+	<Using Include="JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate"/>
+	<Using Include="JwtStore.Core"/>
+	<Using Include="JwtStore.Infra.Data" />
 
-    <Using Include="Microsoft.EntityFrameworkCore" />
+	<Using Include="Microsoft.EntityFrameworkCore" />
+	<Using Include="Microsoft.IdentityModel.Tokens"/>
+	<Using Include="System.IdentityModel.Tokens.Jwt;"/>
+	<Using Include="System.Security.Claims"/>
+	<Using Include="System.Text"/>
+
+
   </ItemGroup>
 
   <ItemGroup>
